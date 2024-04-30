@@ -1,4 +1,5 @@
 from ..extensions import db
+from ..users.models import *
 
 class Course(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -15,11 +16,11 @@ class Lesson(db.Model):
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(255), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     course_id = db.Column(db.Integer, db.ForeignKey('course.id'))
 
 class Rating(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     score = db.Column(db.Integer)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     course_id = db.Column(db.Integer, db.ForeignKey('course.id'))
