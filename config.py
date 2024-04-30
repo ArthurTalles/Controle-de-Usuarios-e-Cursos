@@ -9,7 +9,7 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.getenv('DEV_DATABASE_URL', 'sqlite:///dev.db')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DEV_DATABASE_URL', 'mysql+pymysql://root:0000@localhost/users')
 
 
 class ProductionConfig(Config):

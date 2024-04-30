@@ -9,8 +9,8 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object('config.Config')
     
-    jwt = JWTManager(app)  # Associe o JWTManager à aplicação Flask
-
+    jwt = JWTManager(app)
+    
     db.init_app(app)
     with app.app_context():
         db.create_all()
