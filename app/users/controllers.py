@@ -7,9 +7,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 def register_user():
     data = request.get_json()
 
-    # Log para verificar os dados recebidos
-    print("Data received:", data)
-
     if not data or 'username' not in data or 'password_hash' not in data:
         return jsonify({"message": "username or password not provided"}), 400
 
@@ -46,7 +43,7 @@ class RevokedToken(db.Model):
 
 @jwt_required()
 def user_logout():
-    jti = get_jwt()['jti']  # JTI é o "JWT ID", um identificador único para um JWT
+    jti = get_jwt()['jti']
     try:
         revoked_token = RevokedToken(jti=jti)
         db.session.add(revoked_token)

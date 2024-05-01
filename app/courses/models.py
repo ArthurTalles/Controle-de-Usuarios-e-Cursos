@@ -1,6 +1,6 @@
-from flask_sqlalchemy import SQLAlchemy
 from ..extensions import db
 
+#modelo de banco de dados features controle de cursos
 class Track(db.Model):
     __tablename__ = 'tracks'
     id = db.Column(db.Integer, primary_key=True)

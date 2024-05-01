@@ -1,7 +1,7 @@
-from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from ..extensions import db
 
+#modelo de banco de dados features controle de usuários
 class User(db.Model):
     __tablename__ = 'users'
 
