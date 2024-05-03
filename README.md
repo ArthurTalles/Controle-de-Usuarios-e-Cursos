@@ -20,5 +20,5 @@ Este sistema de gerenciamento de cursos é uma aplicação web desenvolvida em F
 
 ### Pré-requisitos
 - Python 3.8+
-- Pip
+- Flask
 - MySQL
